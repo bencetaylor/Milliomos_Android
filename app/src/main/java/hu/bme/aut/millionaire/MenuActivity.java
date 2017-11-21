@@ -1,5 +1,6 @@
 package hu.bme.aut.millionaire;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -32,17 +33,21 @@ public class MenuActivity extends AppCompatActivity {
         });
 
         continueGame.setEnabled(false);
+
         continueGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view){
                 //TODO - scoreboard activity (intent)
+
             }
         });
 
+        final Intent scoreboardIntent = new Intent(this, ScoreboardActivity.class);
         scoreboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view){
                 //TODO - scoreboard activity (intent)
+                startActivity(scoreboardIntent);
             }
         });
 
