@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0099cc"
+    android:background="@drawable/background"
     android:weightSum="6"
     tools:context="hu.bme.aut.millionaire.MenuActivity">
 
@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:gravity="center"
-            android:text="Új játék" />
+            android:text="@string/new_game" />
 
     </LinearLayout>
 
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:gravity="center"
-            android:text="Folytatás" />
+            android:text="@string/continue_game" />
 
     </LinearLayout>
 
@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:gravity="center"
-            android:text="Eredmények" />
+            android:text="@string/scoreboard" />
 
     </LinearLayout>
 
@@ -68,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:gravity="center"
-            android:text="Beállítások" />
+            android:text="@string/settings" />
 
     </LinearLayout>
 
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:gravity="center"
-            android:text="Kilépés" />
+            android:text="@string/exit" />
 
     </LinearLayout>
 
