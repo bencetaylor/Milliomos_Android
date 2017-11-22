@@ -78,4 +78,7 @@
     <string name="scoreboard">Eredmények</string>
     <string name="settings">Beállítások</string>
     <string name="exit">Kilépés</string>
+    <string name="game_over">Ön vesztett! Vége a játéknak!</string>
+    <string name="back">Vissza</string>
+    <string name="game_won">Gratulálok, Ön nyert!</string>
 </resources>
