@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:weightSum="6"
-    tools:context="hu.bme.aut.millionaire.MenuActivity">
+    tools:context="hu.bme.aut.millionaire.ScoreboardActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
