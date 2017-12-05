@@ -21,6 +21,11 @@
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity android:name=".Game.GameActivity"></activity>
+
+        <meta-data android:name="DATABASE" android:value="scoreboard.db" />
+        <meta-data android:name="VERSION" android:value="2" />
+        <meta-data android:name="QUERY_LOG" android:value="true" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="hu.bme.aut.millionaire" />
     </application>
 
 
