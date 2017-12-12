@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import hu.bme.aut.millionaire.Game.AudienceHelpFragment;
 import hu.bme.aut.millionaire.Game.GameActivity;
+import hu.bme.aut.millionaire.Game.PhoneHelpFragment;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -30,11 +32,12 @@ public class MenuActivity extends AppCompatActivity {
         });
 
         //TODO check if there's a saved game
-        continueGame.setEnabled(false);
+        //continueGame.setEnabled(false);
         continueGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view){
-                //TODO - scoreboard activity (intent)
+               //new AudienceHelpFragment().show(getSupportFragmentManager(), AudienceHelpFragment.TAG);
+                new PhoneHelpFragment().show(getSupportFragmentManager(), PhoneHelpFragment.TAG);
             }
         });
 

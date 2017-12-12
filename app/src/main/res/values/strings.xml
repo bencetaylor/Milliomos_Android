@@ -81,4 +81,8 @@
     <string name="game_over">Ön vesztett! Vége a játéknak!</string>
     <string name="back">Vissza</string>
     <string name="game_won">Gratulálok, Ön nyert!</string>
+    <string name="audience_help">Közönség segítsége</string>
+    <string name="ok">Ok</string>
+    <string name="fifty_help">Felező</string>
+    <string name="cancel">Mégse</string>
 </resources>
