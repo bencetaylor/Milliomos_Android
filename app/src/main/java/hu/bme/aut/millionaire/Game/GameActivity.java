@@ -32,8 +32,6 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-
-
         audienceHelp = (ImageButton) findViewById(R.id.btn_audience);
         audienceHelp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,10 +41,8 @@ public class GameActivity extends AppCompatActivity {
                     audienceHelp.setEnabled(false);
                     audienceHelp.setImageResource(R.drawable.rsz_audience_dis);
                 }
-
             }
         });
-
         phoneHelp = (ImageButton) findViewById(R.id.btn_phone);
         phoneHelp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +54,6 @@ public class GameActivity extends AppCompatActivity {
                 }
             }
         });
-
         fiftyHelp = (ImageButton) findViewById(R.id.btn_fifty);
         fiftyHelp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,15 +81,71 @@ public class GameActivity extends AppCompatActivity {
 
         answerA = (Button) findViewById(R.id.answerA);
         answerA.setText(questionManager.currentQuestions.get(questionCounter).A);
+        answerA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view){
+               if(answerCheck("A"))
+                   loadNextQuestion();
+               else
+                   gameOver();
+            }
+        });
 
         answerB = (Button) findViewById(R.id.answerB);
         answerB.setText(questionManager.currentQuestions.get(questionCounter).B);
+        answerB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view){
+                if(answerCheck("B"))
+                    loadNextQuestion();
+                else
+                    gameOver();
+            }
+        });
 
         answerC = (Button) findViewById(R.id.answerC);
         answerC.setText(questionManager.currentQuestions.get(questionCounter).C);
+        answerC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view){
+                if(answerCheck("C"))
+                    loadNextQuestion();
+                else
+                    gameOver();
+            }
+        });
 
         answerD = (Button) findViewById(R.id.answerD);
         answerD.setText(questionManager.currentQuestions.get(questionCounter).D);
+        answerD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view){
+                if(answerCheck("D"))
+                    loadNextQuestion();
+                else
+                    gameOver();
+            }
+        });
+
+    }
+
+    public boolean answerCheck(String answer){
+        if(answer.equals(questionManager.currentQuestions.get(questionCounter).corr))
+            return true;
+        else
+            return false;
+    }
+
+    public void loadNextQuestion(){
+        questionCounter++;
+        questionText.setText(questionManager.currentQuestions.get(questionCounter).question);
+        answerA.setText(questionManager.currentQuestions.get(questionCounter).A);
+        answerB.setText(questionManager.currentQuestions.get(questionCounter).B);
+        answerC.setText(questionManager.currentQuestions.get(questionCounter).C);
+        answerD.setText(questionManager.currentQuestions.get(questionCounter).D);
+    }
+
+    public void gameOver(){
 
     }
 
