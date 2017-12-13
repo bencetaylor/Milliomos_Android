@@ -2,6 +2,7 @@ package hu.bme.aut.millionaire.Game;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,8 @@ public class GameActivity extends AppCompatActivity {
     private ImageButton fiftyHelp;
     private TextView questionText;
     private QuestionManager questionManager;
+    private TextView timerText;
+    private CountDownTimer timer;
 
     private static int questionCounter = 2;
 
@@ -127,6 +130,11 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
+        //TODO timer visszaállítása jó válasz esetén
+        timerText = (TextView) findViewById(R.id.timer_text);
+        timer = newTimer(30000);
+        timer.start();
+
     }
 
     public boolean answerCheck(String answer){
@@ -143,10 +151,25 @@ public class GameActivity extends AppCompatActivity {
         answerB.setText(questionManager.currentQuestions.get(questionCounter).B);
         answerC.setText(questionManager.currentQuestions.get(questionCounter).C);
         answerD.setText(questionManager.currentQuestions.get(questionCounter).D);
+        timer = newTimer(30000);
     }
 
     public void gameOver(){
 
+    }
+
+    public CountDownTimer newTimer(int startTime){
+        return new CountDownTimer(startTime, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                String s = Long.toString(millisUntilFinished/1000);
+                timerText.setText(s);
+            }
+
+            public void onFinish() {
+                timerText.setText("Game Over!");
+            }
+        };
     }
 
     private void fiftyHelp(){

@@ -18,6 +18,9 @@ public class SettingsActivity extends AppCompatActivity {
         btn_back = (Button) findViewById(R.id.btn_settings_back);
 
         final Intent intent = new Intent(this, MenuActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {

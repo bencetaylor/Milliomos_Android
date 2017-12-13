@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7a40dd"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:text="Adja meg a nevét:"/>
+
+        <EditText
+            android:id="@+id/scoreboard_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="#FFFFFF"/>
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="match_parent"
@@ -15,12 +35,14 @@
         android:textColor="#FFFFFF"
         android:layout_marginTop="16dp"
         android:textSize="30sp"
+        android:layout_weight="7"
         android:text="@string/game_won"/>
+
     <Button
         android:id="@+id/btn_won_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_weight="1"
         android:text="@string/back"/>
-</RelativeLayout>
+</LinearLayout>

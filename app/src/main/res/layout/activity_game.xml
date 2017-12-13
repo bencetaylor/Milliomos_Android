@@ -33,6 +33,14 @@
             android:layout_height="70dp"
             android:text="Phone"
             android:src="@drawable/rsz_phone"/>
+        <TextView
+            android:id="@+id/timer_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="#FFFFFF"
+            android:textAlignment="viewEnd"
+            android:text="30"/>
 
     </LinearLayout>
 

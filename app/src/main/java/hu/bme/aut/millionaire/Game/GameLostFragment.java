@@ -39,6 +39,8 @@ public class GameLostFragment extends Fragment {
             public void onClick(final View view){
                 // Reméljük működik így :D
                 Intent intent = new Intent(getActivity(), MenuActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
         });
