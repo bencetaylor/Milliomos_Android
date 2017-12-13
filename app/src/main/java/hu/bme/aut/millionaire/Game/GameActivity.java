@@ -25,7 +25,7 @@ public class GameActivity extends AppCompatActivity {
     private TextView questionText;
     private QuestionManager questionManager;
 
-    private static int questionCounter = 1;
+    private static int questionCounter = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +75,7 @@ public class GameActivity extends AppCompatActivity {
         try {
             questionManager = new QuestionManager(context);
         } catch (IOException e) {
+            System.err.print("FileNotFound");
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -84,19 +85,16 @@ public class GameActivity extends AppCompatActivity {
         questionText.setText(questionManager.currentQuestions.get(questionCounter).question);
 
         answerA = (Button) findViewById(R.id.answerA);
-        answerA.setText(questionManager.currentQuestions.get(0).A);
+        answerA.setText(questionManager.currentQuestions.get(questionCounter).A);
 
         answerB = (Button) findViewById(R.id.answerB);
-        answerB.setText(questionManager.currentQuestions.get(0).B);
+        answerB.setText(questionManager.currentQuestions.get(questionCounter).B);
 
         answerC = (Button) findViewById(R.id.answerC);
-        answerC.setText(questionManager.currentQuestions.get(0).C);
+        answerC.setText(questionManager.currentQuestions.get(questionCounter).C);
 
         answerD = (Button) findViewById(R.id.answerD);
-        answerD.setText(questionManager.currentQuestions.get(0).D);
-
-
-
+        answerD.setText(questionManager.currentQuestions.get(questionCounter).D);
 
     }
 

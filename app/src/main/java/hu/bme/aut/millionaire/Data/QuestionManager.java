@@ -5,12 +5,14 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.concurrent.ThreadLocalRandom;
+
+import hu.bme.aut.millionaire.R;
 
 /**
  * Created by Bence on 2017. 11. 23..
@@ -27,11 +29,13 @@ public class QuestionManager {
     public QuestionManager(Context context) throws IOException, ClassNotFoundException {
 
         load(context);
-        currentQuestions = new ArrayList<>();
+
         sortList();
         initQuestionBorders();
 
-        for(int i=0; i<15; i++){
+        currentQuestions = new ArrayList<>();
+
+        for(int i=0; i<10; i++){
             currentQuestions.add(questionArray.get(getNumber(i)));
         }
     }
@@ -44,9 +48,9 @@ public class QuestionManager {
      */
     public void load(Context context) throws IOException, ClassNotFoundException{
 
-        FileInputStream fin = context.openFileInput("loim.csv");
+        InputStream is = context.getResources().openRawResource(R.raw.loim);
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(fin));
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
         try{
             questionArray = new ArrayList<>();
             while(true){
