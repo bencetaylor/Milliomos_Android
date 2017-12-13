@@ -5,13 +5,13 @@ package hu.bme.aut.millionaire.Data;
  */
 
 public class Question {
-    String question;
+    public String question;
     private int difficulty;
-    String A;
-    String B;
-    String C;
-    String D;
-    String corr;
+    public String A;
+    public String B;
+    public String C;
+    public String D;
+    public String corr;
 
     /**
      * A kérdés osztály konstruktora.
