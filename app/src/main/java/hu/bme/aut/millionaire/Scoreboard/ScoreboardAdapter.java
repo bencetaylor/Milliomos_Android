@@ -11,13 +11,9 @@ import java.util.List;
 
 import hu.bme.aut.millionaire.R;
 
-/**
- * Created by Bence on 2017. 11. 23..
- */
-
 public class ScoreboardAdapter extends RecyclerView.Adapter<ScoreboardAdapter.ScoreboardViewHolder>{
 
-    private final List<ScoreboardData> items;
+    public List<ScoreboardData> items;
 
     public ScoreboardAdapter() {
         items = new ArrayList<>();
