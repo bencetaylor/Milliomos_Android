@@ -36,7 +36,7 @@ public class QuestionManager {
         currentQuestions = new ArrayList<>();
 
         //TODO 15 kérdés feltöltése
-        for(int i=0; i<10; i++){
+        for(int i=0; i<14; i++){
             currentQuestions.add(questionArray.get(getNumber(i)));
         }
     }

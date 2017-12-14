@@ -2,6 +2,7 @@ package hu.bme.aut.millionaire.Game;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,20 +16,34 @@ import android.widget.TextView;
 import hu.bme.aut.millionaire.R;
 
 /**
- * Created by Bence on 2017. 11. 22..
+ * Mindig a j valaszt adja meg
  */
 
 public class AudienceHelpFragment extends AppCompatDialogFragment {
 
     public static final String TAG = "AudienceHelpDialogFragment";
 
-    private TextView helpEditText;
+    private TextView helpText;
+    private String message;
+
+    static AudienceHelpFragment newInstance(String ans) {
+        AudienceHelpFragment f = new AudienceHelpFragment();
+
+        // Supply num input as an argument.
+        Bundle args = new Bundle();
+        args.putString("ans", ans);
+        f.setArguments(args);
+
+        return f;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FragmentActivity activity = getActivity();
+        Intent intent = activity.getIntent();
 
+        message = getArguments().getString("ans");
     }
 
     @NonNull
@@ -48,7 +63,9 @@ public class AudienceHelpFragment extends AppCompatDialogFragment {
 
     private View getContentView() {
         View contentView = LayoutInflater.from(getContext()).inflate(R.layout.audience_dialog_fragment, null);
-        helpEditText = (TextView) contentView.findViewById(R.id.tv_audience_help);
+
+        helpText = (TextView) contentView.findViewById(R.id.tv_audience_help);
+        helpText.setText("A helyes valasz a " + message);
 
         return contentView;
     }

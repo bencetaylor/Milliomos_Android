@@ -18,7 +18,6 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         Button newGame = (Button) findViewById(R.id.btn_newGame);
-        Button continueGame = (Button) findViewById(R.id.btn_continue);
         Button scoreboard = (Button) findViewById(R.id.btn_scoreboard);
         Button settings = (Button) findViewById(R.id.btn_settings);
         Button exit = (Button) findViewById(R.id.btn_exit);
@@ -28,16 +27,6 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(final View view){
                 startActivity(newgameIntent);
-            }
-        });
-
-        //TODO check if there's a saved game
-        //continueGame.setEnabled(false);
-        continueGame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View view){
-               //new AudienceHelpFragment().show(getSupportFragmentManager(), AudienceHelpFragment.TAG);
-                new PhoneHelpFragment().show(getSupportFragmentManager(), PhoneHelpFragment.TAG);
             }
         });
 

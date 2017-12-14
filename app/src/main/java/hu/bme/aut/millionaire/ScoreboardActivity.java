@@ -47,16 +47,16 @@ public class ScoreboardActivity extends AppCompatActivity {
     private void initRecyclerView() {
         recyclerView = (RecyclerView) findViewById(R.id.ScoreboardRecyclerView);
         adapter = new ScoreboardAdapter();
-        //loadItemsInBackground();
-        loadItems();
+        loadItemsInBackground();
+        //loadItems();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }
 
-    private void loadItems(){
+    /*private void loadItems(){
         adapter.items = ScoreboardData.listAll(ScoreboardData.class);
-    }
-/*
+    }*/
+
     private void loadItemsInBackground() {
         new AsyncTask<Void, Void, List<ScoreboardData>>() {
 
@@ -71,5 +71,5 @@ public class ScoreboardActivity extends AppCompatActivity {
                 adapter.update(scoreboardItems);
             }
         }.execute();
-    }*/
+    }
 }

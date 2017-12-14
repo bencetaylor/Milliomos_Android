@@ -11,17 +11,17 @@
     android:paddingRight="16dip">
 
     <TextView
-        android:id="@+id/ScoreboardItemNameTextView"
+        android:id="@+id/scoreboardItemNameTextView"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textSize="24sp"
         tools:text="Example Name"/>
 
     <TextView
-        android:id="@+id/ScoreboardItemPointsTextView"
+        android:id="@+id/scoreboardItemPointsTextView"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textSize="24sp"
         android:textAlignment="center"
         tools:text="12000"/>
 

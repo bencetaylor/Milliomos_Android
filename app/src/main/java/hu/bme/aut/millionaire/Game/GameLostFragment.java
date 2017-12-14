@@ -16,7 +16,7 @@ import hu.bme.aut.millionaire.R;
  * Created by Bence on 2017. 11. 22..
  */
 
-public class GameLostFragment extends Fragment {
+public class GameLostFragment extends android.app.Fragment {
 
     private Button back;
 
@@ -33,7 +33,7 @@ public class GameLostFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_lost_game,
                 container, false);
 
-        back = (Button) view.findViewById(R.id.btn_won_back);
+        back = (Button) view.findViewById(R.id.btn_lost_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view){

@@ -9,19 +9,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.orm.SugarContext;
+
 import hu.bme.aut.millionaire.MenuActivity;
 import hu.bme.aut.millionaire.R;
+import hu.bme.aut.millionaire.Scoreboard.ScoreboardData;
 
 /**
  * Created by Bence on 2017. 11. 22..
  */
 
-public class GameWonFragment extends Fragment {
+public class GameWonFragment extends android.app.Fragment {
     private Button back;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SugarContext.init(getActivity());
     }
 
     @Nullable
@@ -35,6 +39,11 @@ public class GameWonFragment extends Fragment {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view){
+                ScoreboardData data = new ScoreboardData();
+                data.playerName="Bence";
+                data.scoredPoints=12000;
+                data.save();
+
                 Intent intent = new Intent(getActivity(), MenuActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

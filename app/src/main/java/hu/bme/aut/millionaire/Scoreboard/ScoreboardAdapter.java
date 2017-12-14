@@ -30,7 +30,7 @@ public class ScoreboardAdapter extends RecyclerView.Adapter<ScoreboardAdapter.Sc
     public void onBindViewHolder(ScoreboardViewHolder holder, int position) {
         ScoreboardData item = items.get(position);
         holder.ScoreboardItemNameTextView.setText(item.playerName);
-        holder.ScoreboardItemPointsTextView.setText(item.scoredPoints);
+        holder.ScoreboardItemPointsTextView.setText(Integer.toString(item.scoredPoints));
     }
 
     @Override
@@ -59,8 +59,8 @@ public class ScoreboardAdapter extends RecyclerView.Adapter<ScoreboardAdapter.Sc
         public ScoreboardViewHolder(View itemView) {
             super(itemView);
 
-            ScoreboardItemNameTextView = (TextView) itemView.findViewById(R.id.ScoreboardItemNameTextView);
-            ScoreboardItemPointsTextView = (TextView) itemView.findViewById(R.id.ScoreboardItemPointsTextView);
+            ScoreboardItemNameTextView = (TextView) itemView.findViewById(R.id.scoreboardItemNameTextView);
+            ScoreboardItemPointsTextView = (TextView) itemView.findViewById(R.id.scoreboardItemPointsTextView);
         }
     }
 }
