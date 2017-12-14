@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.orm.SugarContext;
 
@@ -19,8 +20,9 @@ import hu.bme.aut.millionaire.Scoreboard.ScoreboardData;
  * Created by Bence on 2017. 11. 22..
  */
 
-public class GameWonFragment extends android.app.Fragment {
+public class GameWonFragment extends Fragment {
     private Button back;
+    private EditText nameText;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,13 +37,17 @@ public class GameWonFragment extends android.app.Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_won_game,
                 container, false);
+        final int score = getArguments().getInt("score");
+
+        nameText = (EditText) view.findViewById(R.id.scoreboard_name);
+
         back = (Button) view.findViewById(R.id.btn_won_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view){
                 ScoreboardData data = new ScoreboardData();
-                data.playerName="Bence";
-                data.scoredPoints=12000;
+                data.playerName = nameText.getText().toString();
+                data.scoredPoints = score;
                 data.save();
 
                 Intent intent = new Intent(getActivity(), MenuActivity.class);

@@ -16,7 +16,7 @@ import hu.bme.aut.millionaire.R;
  * Created by Bence on 2017. 11. 22..
  */
 
-public class GameLostFragment extends android.app.Fragment {
+public class GameLostFragment extends Fragment {
 
     private Button back;
 

@@ -176,7 +176,12 @@ public class GameActivity extends AppCompatActivity {
     public void  gameWon(){
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("score", score);
         GameWonFragment gameWonFragment = new GameWonFragment();
+        gameWonFragment.setArguments(bundle);
+
         fragmentTransaction.add(R.id.fragment_container, gameWonFragment, "HELLO");
         fragmentTransaction.commit();
         timer.cancel();
@@ -185,7 +190,12 @@ public class GameActivity extends AppCompatActivity {
     public void gameOver(){
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("score", score);
         GameLostFragment gameLostFragment = new GameLostFragment();
+        gameLostFragment.setArguments(bundle);
+
         fragmentTransaction.add(R.id.fragment_container, gameLostFragment, "HELLO");
         fragmentTransaction.commit();
         timer.cancel();
