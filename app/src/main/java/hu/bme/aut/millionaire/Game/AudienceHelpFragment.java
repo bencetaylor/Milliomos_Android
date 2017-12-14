@@ -1,6 +1,8 @@
 package hu.bme.aut.millionaire.Game;
 
 import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +21,7 @@ import hu.bme.aut.millionaire.R;
  * Mindig a j valaszt adja meg
  */
 
-public class AudienceHelpFragment extends AppCompatDialogFragment {
+public class AudienceHelpFragment extends DialogFragment {
 
     public static final String TAG = "AudienceHelpDialogFragment";
 
@@ -40,7 +42,7 @@ public class AudienceHelpFragment extends AppCompatDialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FragmentActivity activity = getActivity();
+        FragmentActivity activity = (FragmentActivity)getActivity();
         Intent intent = activity.getIntent();
 
         message = getArguments().getString("ans");

@@ -4,92 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
-    android:weightSum="10"
     tools:context="hu.bme.aut.millionaire.Game.GameActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="2">
-
-        <ImageButton
-            android:id="@+id/btn_audience"
-            android:background="@color/colorPrimary"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:text="Audience"
-            android:src="@drawable/rsz_audience"/>
-        <ImageButton
-            android:id="@+id/btn_fifty"
-            android:background="@color/colorPrimary"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:src="@drawable/rsz_fifty"/>
-        <ImageButton
-            android:id="@+id/btn_phone"
-            android:background="@color/colorPrimary"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:text="Phone"
-            android:src="@drawable/rsz_phone"/>
-        <TextView
-            android:id="@+id/timer_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:textColor="#FFFFFF"
-            android:textAlignment="viewEnd"
-            android:text="30"/>
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/questionText"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:text="Question?"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-        android:textSize="28sp" />
-
-    <Button
-        android:id="@+id/answerA"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="A" />
-
-    <Button
-        android:id="@+id/answerB"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="B" />
-
-
-    <Button
-        android:id="@+id/answerC"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="C" />
-
-
-    <Button
-        android:id="@+id/answerD"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="D" />
 
     <LinearLayout
         android:id="@+id/fragment_container"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1"
         >
     </LinearLayout>
 

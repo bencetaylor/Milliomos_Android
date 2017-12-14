@@ -20,7 +20,7 @@ import hu.bme.aut.millionaire.Scoreboard.ScoreboardData;
  * Created by Bence on 2017. 11. 22..
  */
 
-public class GameWonFragment extends Fragment {
+public class GameWonFragment extends android.app.Fragment {
     private Button back;
     private EditText nameText;
 
@@ -39,7 +39,7 @@ public class GameWonFragment extends Fragment {
                 container, false);
         final int score = getArguments().getInt("score");
 
-        nameText = (EditText) view.findViewById(R.id.scoreboard_name);
+        nameText = (EditText) view.findViewById(R.id.win_name);
 
         back = (Button) view.findViewById(R.id.btn_won_back);
         back.setOnClickListener(new View.OnClickListener() {

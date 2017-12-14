@@ -20,7 +20,7 @@
             android:text="Adja meg a nevét:"/>
 
         <EditText
-            android:id="@+id/scoreboard_name"
+            android:id="@+id/win_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:shadowColor="#FFFFFF"/>

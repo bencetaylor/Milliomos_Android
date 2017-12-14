@@ -1,12 +1,14 @@
 package hu.bme.aut.millionaire.Game;
 
 import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatDialogFragment;
@@ -21,7 +23,7 @@ import hu.bme.aut.millionaire.R;
  * Created by Bence on 2017. 11. 22..
  */
 
-public class PhoneHelpFragment extends AppCompatDialogFragment {
+public class PhoneHelpFragment extends DialogFragment {
     public static final String TAG = "PhoneHelpDialogFragment";
 
     private TextView phoneTextView;
@@ -30,7 +32,7 @@ public class PhoneHelpFragment extends AppCompatDialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FragmentActivity activity = getActivity();
+        FragmentActivity activity = (FragmentActivity) getActivity();
 
     }
 
