@@ -18,7 +18,7 @@
             android:background="@color/colorPrimary"
             android:layout_width="100dp"
             android:layout_height="70dp"
-            android:text="Audience"
+            android:text="@string/audience"
             android:src="@drawable/rsz_audience"/>
         <ImageButton
             android:id="@+id/btn_fifty"
@@ -31,16 +31,15 @@
             android:background="@color/colorPrimary"
             android:layout_width="100dp"
             android:layout_height="70dp"
-            android:text="Phone"
+            android:text="@string/phone"
             android:src="@drawable/rsz_phone"/>
         <TextView
             android:id="@+id/timer_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30sp"
-            android:textColor="#FFFFFF"
-            android:textAlignment="viewEnd"
-            android:text="30"/>
+            android:textColor="@color/white"
+            android:textAlignment="viewEnd" />
 
     </LinearLayout>
 
@@ -49,39 +48,34 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:text="Question?"
         android:textAlignment="center"
-        android:textColor="#ffffff"
+        android:textColor="@color/white"
         android:textSize="28sp" />
 
     <Button
         android:id="@+id/answerA"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="A" />
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/answerB"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="B" />
+        android:layout_weight="1"/>
 
 
     <Button
         android:id="@+id/answerC"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="C" />
+        android:layout_weight="1" />
 
 
     <Button
         android:id="@+id/answerD"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="D" />
+        android:layout_weight="1"/>
 
 </LinearLayout>

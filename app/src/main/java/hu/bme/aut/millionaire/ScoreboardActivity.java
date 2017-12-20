@@ -18,7 +18,6 @@ import hu.bme.aut.millionaire.Scoreboard.ScoreboardData;
 
 public class ScoreboardActivity extends AppCompatActivity {
 
-    private Button back;
     private RecyclerView recyclerView;
     private ScoreboardAdapter adapter;
 
@@ -34,28 +33,15 @@ public class ScoreboardActivity extends AppCompatActivity {
         final Intent intent = new Intent(this, MenuActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-/*
-        back = (Button) findViewById(R.id.btn_scoreboard_back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View view){
-                startActivity(intent);
-            }
-        });*/
     }
 
     private void initRecyclerView() {
         recyclerView = (RecyclerView) findViewById(R.id.ScoreboardRecyclerView);
         adapter = new ScoreboardAdapter();
         loadItemsInBackground();
-        //loadItems();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }
-
-    /*private void loadItems(){
-        adapter.items = ScoreboardData.listAll(ScoreboardData.class);
-    }*/
 
     private void loadItemsInBackground() {
         new AsyncTask<Void, Void, List<ScoreboardData>>() {

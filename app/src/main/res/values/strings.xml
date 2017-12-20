@@ -85,4 +85,8 @@
     <string name="ok">Ok</string>
     <string name="fifty_help">Felező</string>
     <string name="cancel">Mégse</string>
+    <string name="give_your_name">Adja meg a nevét:</string>
+    <string name="audience">Audience</string>
+    <string name="phone">Phone</string>
+    <string name="preference_file_key">TIMER</string>
 </resources>

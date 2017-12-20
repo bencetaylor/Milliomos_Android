@@ -1,6 +1,7 @@
 package hu.bme.aut.millionaire.Game;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import com.orm.SugarContext;
 import java.io.IOException;
 
 import hu.bme.aut.millionaire.Data.QuestionManager;
+import hu.bme.aut.millionaire.Helper;
 import hu.bme.aut.millionaire.R;
 
 public class PlayGameFragment extends android.app.Fragment {
@@ -31,6 +33,7 @@ public class PlayGameFragment extends android.app.Fragment {
     private QuestionManager questionManager;
     private TextView timerText;
     private CountDownTimer timer;
+    private int timerClock;
     private int score;
     private int timeLeft = 0;
 
@@ -148,8 +151,18 @@ public class PlayGameFragment extends android.app.Fragment {
             }
         });
 
+        SharedPreferences game = getActivity().getSharedPreferences(Helper.TIMER, 0);
+        Helper.setActualGameScore(game.getInt(Helper.TIMER_VALUE, 0));
+
+        timerClock = Helper.TIMER_ACTUAL_VALUE;
+        // A timer default értéke ha nem állítanánk be
+        if(timerClock == 0)
+            timerClock=30;
+
+        timerClock *= 1000;
+
         timerText = (TextView) view.findViewById(R.id.timer_text);
-        timer = newTimer(30000);
+        timer = newTimer(timerClock);
         timer.start();
 
         return view;
@@ -194,7 +207,7 @@ public class PlayGameFragment extends android.app.Fragment {
             calculateScore();
             if(timer != null)
                 timer.cancel();
-            timer = newTimer(30000);
+            timer = newTimer(timerClock);
             timer.start();
         }
     }

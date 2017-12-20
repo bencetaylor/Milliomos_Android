@@ -49,6 +49,11 @@ public class ScoreboardAdapter extends RecyclerView.Adapter<ScoreboardAdapter.Sc
         notifyDataSetChanged();
     }
 
+    public void clear(){
+        items.clear();
+        notifyDataSetChanged();
+    }
+
 
     public class ScoreboardViewHolder extends RecyclerView.ViewHolder {
 

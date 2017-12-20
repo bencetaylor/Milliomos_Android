@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7a40dd"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
     android:padding="16dp"
     android:weightSum="10">
@@ -15,16 +15,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="20sp"
-            android:text="Adja meg a nevét:"/>
+            android:text="@string/give_your_name"/>
 
         <EditText
             android:id="@+id/lost_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:shadowColor="#FFFFFF"/>
+            android:textColor="@color/white"/>
     </LinearLayout>
 
     <TextView
@@ -32,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:gravity="center"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:layout_marginTop="16dp"
         android:textSize="30sp"
         android:layout_weight="7"

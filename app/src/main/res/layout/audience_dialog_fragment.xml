@@ -9,7 +9,6 @@
     <TextView
         android:id="@+id/tv_audience_help"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Audience answer!"/>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
